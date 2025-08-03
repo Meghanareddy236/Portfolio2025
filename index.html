@@ -76,7 +76,7 @@
         }
 
         .hamburger {
-            display: none;
+            display:none;
             font-size: 1.5rem;
             cursor: pointer;
             color: #8e1e36;
@@ -173,11 +173,14 @@
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 1s;
         }
+        .dark-mode .hero-text h2{
+            color: #4b030a ;
+        }
 
         .hero-text p {
             font-size: 1rem;
             margin-bottom: 1rem;
-            color: #4a5568;
+            color: #26282c;
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 1.5s;
@@ -249,11 +252,16 @@
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
-
-        .about, .projects, .certifications, .contact {
+        
+        .projects, .certifications, .contact {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 3rem 1rem;
+            padding: 8rem 2rem;
+        }
+        .about{
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10rem 0rem;
         }
 
         h2 {
