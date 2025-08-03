@@ -187,17 +187,7 @@
             color: #cbd5e0;
         }
 
-        .hero img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: scale(0.8);
-            animation: zoomIn 1s ease-out forwards;
-            animation-delay: 0.8s;
-        }
+       
 
         .btn {
             display: inline-block;
@@ -986,26 +976,18 @@
 }
 
 .chat-input input {
-    flex: 1;
-    font-size: 0.8rem;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-right: none;
-    border-radius: 8px 0 0 8px;
-    outline: none;
+    width: 100%;
 }
 
 .chat-input button {
-    font-size: 0.8rem;
-    padding: 0.6rem 0.9rem;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-radius: 0 8px 8px 0;
+    width:100%;
     background-color: #800020;
     color: white;
     cursor: pointer;
     white-space: nowrap;
 }
+
+
 
         }
 
@@ -1013,7 +995,11 @@
             .navbar .logo {
                 font-size: 1.1rem;
             }
-
+             .hero img {
+            width: 120px;
+            height: 120px;
+            
+        }
             .nav-links {
                 top: 45px;
                 padding: 0.6rem;
@@ -1115,19 +1101,11 @@
             }
 
             .chat-input {
-    display: flex;
-    width: 100%;
-    padding: 0.5rem;
-    gap: 0.5rem;
-    box-sizing: border-box;
+                flex-direction: column;
 }
 
 .chat-input input {
-    flex: 1;
-    font-size: 0.8rem;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
+    width:100%;
     
 }
 
@@ -1142,7 +1120,26 @@
     white-space: nowrap;
 }
 
+
+
         }
+        
+.hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.hero-img img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 70%;
+  object-position: center top;
+  border: 3px solid #800000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
     </style>
 </head>
 <body>
@@ -1167,9 +1164,9 @@
                     <h2>AI/ML Developer | PwC Launchpad Trainee</h2>
                 </div>
                 <p>B.Tech student at CMR Institute of Technology, passionate about building AI-powered solutions for real-world challenges.</p>
-                <a href="https://drive.google.com/file/d/1u3u9tTD8_0aKTZvJo4ctBS8rDh3pbKjP/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                <a href="https://drive.google.com/file/d/1_GMR4DggoYDjUxziaNaiFLsPUnY0AwE0/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
             </div>
-            <img src="me.jpg" alt="Meghana Dakkata" onerror="this.src='https://via.placeholder.com/200';">
+            <div class="hero-img"><img src="po.jpg" alt="Meghana Dakkata" onerror="this.src='https://via.placeholder.com/200';"></div>
         </div>
     </section>
 
