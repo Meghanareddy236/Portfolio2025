@@ -762,12 +762,12 @@
                 flex-direction: column;
                 position: absolute;
                 top: 50px;
-                left: 0;
-                width: 100%;
+                right: 0; /* Align hamburger menu to the right */
+                width: 200px;
                 background: #ffffff;
                 padding: 0.8rem;
-                border-radius: 0 0 10px 10px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                border-radius: 0 0 0 10px;
+                box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.08);
             }
 
             .dark-mode .nav-links {
@@ -781,10 +781,12 @@
             .nav-links a {
                 font-size: 1rem;
                 padding: 0.5rem 0;
+                text-align: right;
             }
 
             .hamburger {
                 display: block;
+                order: 2; /* Move hamburger to the right end */
             }
 
             .theme-toggle {
@@ -998,6 +1000,7 @@
             .nav-links {
                 top: 45px;
                 padding: 0.6rem;
+                width: 180px;
             }
 
             .nav-links a {
@@ -1078,7 +1081,7 @@
             <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
         </div>
-        <div class="theme-toggle">🌙</div>
+        <div class="theme-toggle">🌗</div>
     </nav>
 
     <section id="home" class="hero section">
@@ -1091,7 +1094,7 @@
                 <p>B.Tech student at CMR Institute of Technology, passionate about building AI-powered solutions for real-world challenges.</p>
                 <a href="https://drive.google.com/file/d/1u3u9tTD8_0aKTZvJo4ctBS8rDh3pbKjP/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
             </div>
-            <img src="me.jpg" alt="Meghana Dakkata">
+            <img src="me.jpg" alt="Meghana Dakkata" onerror="this.src='https://via.placeholder.com/200';">
         </div>
     </section>
 
