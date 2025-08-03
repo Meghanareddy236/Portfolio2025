@@ -776,8 +776,8 @@
             }
 
             .hamburger {
-                display: block;
-                order: 0; /* Move hamburger to the left */
+                display: block; /* Move hamburger to the left */
+                margin-left: 16px; 
             }
 
             .theme-toggle {
@@ -1001,18 +1001,21 @@
             
         }
             .nav-links {
-                top: 45px;
-                padding: 0.6rem;
-                width: 180px;
+                
+                position: relative;
             }
 
             .nav-links a {
                 font-size: 0.9rem;
             }
 
-            .hamburger {
-                font-size: 1.3rem;
-            }
+             .hamberger {
+    margin-left: 0;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
             .theme-toggle {
                 font-size: 0.9rem;
@@ -1145,7 +1148,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">Meghana Dakkata</div>
-        <div class="hamburger">☰</div>
+        <div class="hamberger">☰</div>
         <div class="nav-links">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
