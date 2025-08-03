@@ -1410,11 +1410,11 @@
         // Predefined question-answer pairs based on portfolio
         const qaPairs = [
             {
-                questions: ["who are you", "tell me about yourself", "about meghana"],
+                questions: ["who are you", "tell me about yourself", "about meghana","who is Meghana"],
                 answer: "I'm Dakkata Meghana, a B.Tech student in Computer Science and Data Science at CMR Institute of Technology. I'm passionate about AI, ML, and automation, with experience in Python, NLP, and web development. I enjoy reading books and playing chess in my free time."
             },
             {
-                questions: ["what projects have you worked on", "tell me about your projects", "projects"],
+                questions: ["what projects have you worked on","what are your projects?", "tell me about your projects", "projects"],
                 answer: "I've worked on several projects, including CognixAI, a personal AI assistant built with Python, PyQt, and Hugging Face API; Dialogue Digest, a web app for summarizing conversation-style text using NLP with the Pegasus model; and a Brain Stroke Prediction System, a machine learning model built with Python and scikit-learn."
             },
             {
@@ -1422,11 +1422,11 @@
                 answer: "CognixAI is a personal AI assistant I built using Python, PyQt, and Hugging Face API. It helps with daily tasks and queries, leveraging AI to provide efficient assistance."
             },
             {
-                questions: ["what is dialogue digest", "tell me about dialogue digest"],
+                questions: ["what is dialogue digest","which techstack u used in dialogue digest", "tell me about dialogue digest"],
                 answer: "Dialogue Digest is a web app I developed using Python, Flask, and NLP with the Pegasus model. It summarizes conversation-style text, making it easier to extract key points from dialogues."
             },
             {
-                questions: ["what is brain stroke prediction", "tell me about brain stroke prediction"],
+                questions: ["what is brain stroke prediction", "what teckstack you used in brain stroke prediction project?","tell me about brain stroke prediction"],
                 answer: "The Brain Stroke Prediction System is a machine learning model I created using Python and scikit-learn. It predicts the likelihood of a brain stroke based on patient data, aiming to support early detection."
             },
             {
@@ -1442,43 +1442,46 @@
                 answer: "Outside of tech, I enjoy reading books and playing chess, which help keep my mind sharp and creative."
             },
             {
-                questions: ["how can I contact you", "contact details"],
-                answer: "You can reach me via email at dakkatameghanareddy@gmail.com, or connect with me on GitHub (Meghanareddy236) or LinkedIn (meghanareddy236). Feel free to use the contact form on my portfolio as well!"
+                questions: ["how can I contact you", "contact details","how can i contact Meghana"],
+                answer: "You can reach me via email at   dakkatameghanareddy@gmail.com  , or connect with me on GitHub (Meghanareddy236) or LinkedIn (meghanareddy236). Feel free to use the contact form on my portfolio as well!"
             }
         ];
 
         function sendMessage() {
-            const userInput = chatInput.value.trim().toLowerCase();
-            if (!userInput) return;
+    const userInput = chatInput.value.trim().toLowerCase();
+    if (!userInput) return;
 
-            // Add user message to chat body
-            const userMessage = document.createElement('div');
-            userMessage.className = 'chat-message user';
-            userMessage.innerHTML = `<div class="message-content">${userInput}</div>`;
-            chatBody.appendChild(userMessage);
+    // Add user message
+    const userMessage = document.createElement('div');
+    userMessage.className = 'chat-message user';
+    userMessage.innerHTML = `<div class="message-content">${chatInput.value}</div>`;
+    chatBody.appendChild(userMessage);
 
-            // Find matching answer
-            let response = "Sorry, I don't have an answer for that. Try asking about my projects, certifications, or skills!";
-            for (const qa of qaPairs) {
-                for (const question of qa.questions) {
-                    if (userInput.includes(question)) {
-                        response = qa.answer;
-                        break;
-                    }
-                }
-                if (response !== "Sorry, I don't have an answer for that. Try asking about my projects, certifications, or skills!") break;
+    // Default response
+    let response = "Sorry, I don't have an answer for that. Try asking about my projects, certifications, or skills!";
+
+    // Search for a match
+    for (const qa of qaPairs) {
+        for (const question of qa.questions) {
+            // Normalize both strings
+            if (userInput.includes(question.toLowerCase())) {
+                response = qa.answer;
+                break;
             }
-
-            // Add bot response
-            const botMessage = document.createElement('div');
-            botMessage.className = 'chat-message bot';
-            botMessage.innerHTML = `<div class="message-content">${response}</div>`;
-            chatBody.appendChild(botMessage);
-
-            // Clear input and scroll to bottom
-            chatInput.value = '';
-            chatBody.scrollTop = chatBody.scrollHeight;
         }
+        if (response !== "Sorry, I don't have an answer for that. Try asking about my projects, certifications, or skills!") break;
+    }
+
+    // Add bot response
+    const botMessage = document.createElement('div');
+    botMessage.className = 'chat-message bot';
+    botMessage.innerHTML = `<div class="message-content">${response}</div>`;
+    chatBody.appendChild(botMessage);
+
+    // Reset input
+    chatInput.value = '';
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
 
         // Allow sending message with Enter key
         chatInput.addEventListener('keypress', (e) => {
