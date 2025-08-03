@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of Dakkata Meghana, a B.Tech student and Data Scientist specializing in AI/ML development.">
+    <title>Dakkata Meghana - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #fffaf0, #f5d7bd, #d3e5cb);
+            color: #000000;
+            transition: color 0.3s, background 0.5s;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #2c1e1e, #60373a, #2f4f4f);
+            color: #e2e8f0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 0.8rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .dark-mode .navbar {
+            background: #2d3748;
+        }
+
+        .navbar .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #9f2531;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5d6778;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .nav-links a {
+            color: #e2e8f0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #740e18;
+            border-bottom: 2px solid #170b0d;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #8e1e36;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #e5c4d5;
+        }
+
+        .section {
+            padding: 3rem 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fffaf0, #f5d7bd, #d3e5cb);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-mode .hero {
+            background: linear-gradient(135deg, #2c1e1e, #60373a, #2f4f4f);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            animation: backgroundPulse 8s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 1.5rem;
+            flex-direction: row-reverse;
+        }
+
+        .hero-text {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+            text-align: left;
+        }
+
+        .hero-nametitle {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: #020202;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end) forwards;
+        }
+
+        .hero-text h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #9f2531;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        .dark-mode .hero-text p {
+            color: #cbd5e0;
+        }
+
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 1s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #740e18;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 2s;
+            font-size: 0.9rem;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .btn:hover::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn:hover {
+            background: #cd2e3e;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .about, .projects, .certifications, .contact {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #d53f8c;
+            text-align: center;
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-box {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            max-width: 100%;
+            margin: 1rem auto 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .dark-mode .about-box {
+            background: #2d3748;
+            box-shadow: 0 6px 18px rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+        }
+
+        .about-heading {
+            color: #9f2531;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .projects-heading, .certifications-heading, .contact-heading {
+            color: #9f2531;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .dark-mode .project-card {
+            background: #2d3748;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            color: #2d3748;
+        }
+
+        .dark-mode .project-card h3 {
+            color: #e2e8f0;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            color: #4a5568;
+        }
+
+        .dark-mode .project-card p {
+            color: #cbd5e0;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-badges span {
+            background: #efcdcd;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #600d0e;
+        }
+
+        .dark-mode .tech-badges span {
+            background: #4a5568;
+            color: #f9a8d4;
+        }
+
+        .project-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .certifications-timeline {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .certification-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #06060678;
+            position: relative;
+        }
+
+        .certification-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #580b0b;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(213, 63, 140, 0.3);
+        }
+
+        .certification-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .dark-mode .certification-item h3 {
+            color: #e2e8f0;
+        }
+
+        .certification-item p {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .dark-mode .certification-item p {
+            color: #cbd5e0;
+        }
+
+        .certificate-img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact form {
+            max-width: 100%;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .dark-mode .contact form {
+            background: #2d3748;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            background: #f7fafc;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group textarea {
+            background: #4a5568;
+            border-color: #718096;
+            color: #e2e8f0;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #d53f3f;
+            outline: none;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 0.7rem;
+            left: 0.7rem;
+            color: #718096;
+            transition: all 0.3s;
+            pointer-events: none;
+            font-size: 0.9rem;
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -0.6rem;
+            left: 0.5rem;
+            font-size: 0.7rem;
+            color: #7e3237;
+            background: #ffffff;
+            padding: 0 0.2rem;
+        }
+
+        .dark-mode .form-group input:focus + label,
+        .dark-mode .form-group textarea:focus + label,
+        .dark-mode .form-group input:not(:placeholder-shown) + label,
+        .dark-mode .form-group textarea:not(:placeholder-shown) + label {
+            background: #2d3748;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #ffffff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .dark-mode .footer {
+            background: #2d3748;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #851e1e;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #c96a6a;
+        }
+
+        .footer-links i {
+            font-size: 1rem;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #740e18;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-to-top:hover {
+            color: #cd2e3e;
+        }
+
+        .chat-bubble {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: #740e18;
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .chat-bubble:hover {
+            background: #cd2e3e;
+            transform: translateY(-2px);
+        }
+
+        .dark-mode .chat-bubble {
+            background: #cd2e3e;
+        }
+
+        .dark-mode .chat-bubble:hover {
+            background: #e55361;
+        }
+
+        .chat-bubble i {
+            font-size: 1rem;
+        }
+
+        .chat-modal {
+            display: none;
+            position: fixed;
+            bottom: 70px;
+            right: 15px;
+            width: 90%;
+            max-width: 300px;
+            max-height: 350px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .dark-mode .chat-modal {
+            background: #2d3748;
+        }
+
+        .chat-modal.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: #740e18;
+            color: #fff;
+            padding: 0.8rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dark-mode .chat-header {
+            background: #cd2e3e;
+        }
+
+        .chat-close {
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 0.8rem;
+            overflow-y: auto;
+            background: #f7fafc;
+        }
+
+        .dark-mode .chat-body {
+            background: #4a5568;
+        }
+
+        .chat-message {
+            margin-bottom: 0.8rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message.user {
+            align-items: flex-end;
+        }
+
+        .chat-message.bot {
+            align-items: flex-start;
+        }
+
+        .chat-message .message-content {
+            max-width: 85%;
+            padding: 0.6rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .chat-message.user .message-content {
+            background: #740e18;
+            color: #fff;
+        }
+
+        .dark-mode .chat-message.user .message-content {
+            background: #cd2e3e;
+        }
+
+        .chat-message.bot .message-content {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .dark-mode .chat-message.bot .message-content {
+            background: #718096;
+            color: #e2e8f0;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 0.8rem;
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .dark-mode .chat-input {
+            background: #2d3748;
+            border-top: 1px solid #718096;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.6rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
+        }
+
+        .dark-mode .chat-input input {
+            background: #4a5568;
+            border-color: #718096;
+            color: #e2e8f0;
+        }
+
+        .chat-input button {
+            padding: 0.6rem 0.8rem;
+            background: #740e18;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .chat-input button:hover {
+            background: #cd2e3e;
+        }
+
+        .dark-mode .chat-input button {
+            background: #cd2e3e;
+        }
+
+        .dark-mode .chat-input button:hover {
+            background: #e55361;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.6rem 1rem;
+            }
+
+            .navbar .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                padding: 0.8rem;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            }
+
+            .dark-mode .nav-links {
+                background: #2d3748;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                padding: 0.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .theme-toggle {
+                font-size: 1rem;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 2rem 1rem;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero-nametitle {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .hero img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .btn::after {
+                width: 0;
+                height: 0;
+            }
+
+            .btn:hover::after {
+                width: 150px;
+                height: 150px;
+            }
+
+            .about {
+                padding: 2rem 1rem;
+            }
+
+            .about-heading {
+                font-size: 1.6rem;
+            }
+
+            .about-box {
+                padding: 1rem;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .projects-heading, .certifications-heading, .contact-heading {
+                font-size: 1.6rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-card {
+                padding: 0.8rem;
+            }
+
+            .project-card img {
+                height: 120px;
+            }
+
+            .project-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-card p {
+                font-size: 0.8rem;
+            }
+
+            .tech-badges span {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .certifications-timeline {
+                padding-left: 1rem;
+            }
+
+            .certification-item {
+                margin-bottom: 1rem;
+                padding-left: 0.8rem;
+            }
+
+            .certification-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .certification-item p {
+                font-size: 0.8rem;
+            }
+
+            .certificate-img {
+                max-width: 200px;
+            }
+
+            .contact form {
+                padding: 1rem;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 0.6rem;
+                font-size: 0.8rem;
+            }
+
+            .form-group label {
+                font-size: 0.8rem;
+            }
+
+            .form-group input:focus + label,
+            .form-group textarea:focus + label,
+            .form-group input:not(:placeholder-shown) + label,
+            .form-group textarea:not(:placeholder-shown) + label {
+                font-size: 0.6rem;
+            }
+
+            .footer {
+                padding: 1rem;
+            }
+
+            .footer-links a {
+                font-size: 0.8rem;
+            }
+
+            .footer-links i {
+                font-size: 0.9rem;
+            }
+
+            .back-to-top {
+                font-size: 0.8rem;
+            }
+
+            .chat-bubble {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .chat-bubble i {
+                font-size: 0.9rem;
+            }
+
+            .chat-modal {
+                bottom: 60px;
+                right: 10px;
+                max-height: 300px;
+            }
+
+            .chat-header {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+
+            .chat-close {
+                font-size: 1rem;
+            }
+
+            .chat-body {
+                padding: 0.6rem;
+            }
+
+            .chat-message .message-content {
+                font-size: 0.7rem;
+                padding: 0.5rem;
+            }
+
+            .chat-input {
+                padding: 0.6rem;
+            }
+
+            .chat-input input {
+                font-size: 0.7rem;
+                padding: 0.5rem;
+            }
+
+            .chat-input button {
+                font-size: 0.7rem;
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                top: 45px;
+                padding: 0.6rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .hamburger {
+                font-size: 1.3rem;
+            }
+
+            .theme-toggle {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 1.5rem 0.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1rem;
+            }
+
+            .hero-text p {
+                font-size: 0.8rem;
+            }
+
+            .hero img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+
+            .about-heading, .projects-heading, .certifications-heading, .contact-heading {
+                font-size: 1.4rem;
+            }
+
+            .about-box {
+                padding: 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .project-card img {
+                height: 100px;
+            }
+
+            .project-card h3 {
+                font-size: 1rem;
+            }
+
+            .certificate-img {
+                max-width: 180px;
+            }
+
+            .chat-modal {
+                max-width: 280px;
+                max-height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Meghana Dakkata</div>
+        <div class="hamburger">☰</div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="theme-toggle">🌙</div>
+    </nav>
+
+    <section id="home" class="hero section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-nametitle">
+                    <h1>Hi, I'm Meghana</h1>
+                    <h2>AI/ML Developer | PwC Launchpad Trainee</h2>
+                </div>
+                <p>B.Tech student at CMR Institute of Technology, passionate about building AI-powered solutions for real-world challenges.</p>
+                <a href="https://drive.google.com/file/d/1u3u9tTD8_0aKTZvJo4ctBS8rDh3pbKjP/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            </div>
+            <img src="me.jpg" alt="Meghana Dakkata">
+        </div>
+    </section>
+
+    <section id="about" class="about section">
+        <h2 class="about-heading">About Me</h2>
+        <div class="about-box">
+            <p>
+                I'm Dakkata Meghana, a final-year B.Tech student in Computer Science and Engineering (Data Science specialization) at CMR Institute of Technology.
+                <br><br>
+                My interests lie in AI, Machine Learning, GenAI, and Natural Language Processing. I’ve worked on several AI-powered projects using Python, automation, and web technologies.
+                <br><br>
+                I was recently selected as a PWC Launchpad Trainee 2025 (ERP track). I’m also certified in Azure AI Fundamentals and hold a 4-star badge in SQL (Intermediate) on HackerRank.
+                <br><br>
+                Outside the tech space, I love reading books and playing chess — they help keep my mind focused and creative.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section">
+        <h2 class="projects-heading">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="cognix.png" alt="CognixAI Project">
+                <h3>CognixAI</h3>
+                <p>A personal AI assistant built with Python, PyQt, and Hugging Face API to assist with daily tasks and queries.</p>
+                <div class="tech-badges">
+                    <span>Python</span>
+                    <span>PyQt</span>
+                    <span>Hugging Face</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Meghanareddy236/cognixAi" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="dialogue.png" alt="Dialogue Digest Project">
+                <h3>Dialogue Digest</h3>
+                <p>A web app for summarizing conversation-style text using NLP with the Pegasus model.</p>
+                <div class="tech-badges">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>NLP</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Meghanareddy236/Dialogue_Digest_Text_Project" class="btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="brain.png" alt="Brain Stroke Prediction System">
+                <h3>Brain Stroke Prediction System</h3>
+                <p>A machine learning model to predict the likelihood of brain stroke using patient data, built with Python and scikit-learn.</p>
+                <div class="tech-badges">
+                    <span>Python</span>
+                    <span>Machine Learning</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/Meghanareddy236/brain_tumor_prediction_app.git" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications section">
+        <h2 class="certifications-heading">Certifications</h2>
+        <div class="certifications-timeline">
+            <div class="certification-item">
+                <h3>PwC Launchpad Program – ERP (Feb 2025 - July 2025)</h3>
+                <p>🔹 Completed a 6-month ERP-focused training.</p>
+                <p>🔹 Covered IT Fundamentals, Java, RDBMS, SAP & Salesforce.</p>
+                <p>🔹 Participated in expert-led masterclasses and cleared micro-certification exams.</p>
+                <img src="pwc.png" alt="PwC Launchpad Certificate" class="certificate-img">
+            </div>
+            <div class="certification-item">
+                <h3>Azure AI Fundamentals – AI-900 (Microsoft certified, June 2025)</h3>
+                <p>Certification in AI fundamentals and Azure AI services.</p>
+                <img src="azure.png" alt="Azure AI Fundamentals Certificate" class="certificate-img">
+            </div>
+            <div class="certification-item">
+                <h3>Career Essentials in Generative AI (LinkedIn Learning, June 2025)</h3>
+                <p>Training in the basics of generative AI and its applications.</p>
+                <img src="linkedin.png" alt="Generative AI Certificate" class="certificate-img">
+            </div>
+            <div class="certification-item">
+                <h3>SQL Intermediate certified - (Hackerrank, July 2025)</h3>
+                <p>Gained hands-on experience with SELECT queries, complex JOINs, aggregation functions, and sub-queries</p>
+                <img src="sql.png" alt="Hackerrank Certificate" class="certificate-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <h2 class="contact-heading">Contact Me</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder=" " required></textarea>
+                <label for="message">Message</label>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <div class="chat-bubble">
+        <i class="fas fa-comment"></i>
+        Ask anything about me
+    </div>
+
+    <div class="chat-modal">
+        <div class="chat-header">
+            <span>Chat with Meghana</span>
+            <span class="chat-close">&times;</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="chat-message bot">
+                <div class="message-content">Hi! I'm here to answer questions about Meghana's portfolio. Ask about her projects, certifications, or anything else!</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Type your question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/Meghanareddy236" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/meghanareddy236" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&to=dakkatameghanareddy@gmail.com" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+        <a href="#home" class="back-to-top">Back to Top</a>
+        <p>&copy; 2025 Dakkata Meghana. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Active Nav Link
+        const sections = document.querySelectorAll('.section');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Section Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form Validation
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Form submitted successfully!');
+                form.reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+
+        // Chat Functionality
+        const chatBubble = document.querySelector('.chat-bubble');
+        const chatModal = document.querySelector('.chat-modal');
+        const chatClose = document.querySelector('.chat-close');
+        const chatBody = document.getElementById('chat-body');
+        const chatInput = document.getElementById('chat-input');
+
+        chatBubble.addEventListener('click', () => {
+            chatModal.classList.toggle('active');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatModal.classList.remove('active');
+        });
+
+        // Predefined question-answer pairs based on portfolio
+        const qaPairs = [
+            {
+                questions: ["who are you", "tell me about yourself", "about meghana"],
+                answer: "I'm Dakkata Meghana, a B.Tech student in Computer Science and Data Science at CMR Institute of Technology. I'm passionate about AI, ML, and automation, with experience in Python, NLP, and web development. I enjoy reading books and playing chess in my free time."
+            },
+            {
+                questions: ["what projects have you worked on", "tell me about your projects", "projects"],
+                answer: "I've worked on several projects, including CognixAI, a personal AI assistant built with Python, PyQt, and Hugging Face API; Dialogue Digest, a web app for summarizing conversation-style text using NLP with the Pegasus model; and a Brain Stroke Prediction System, a machine learning model built with Python and scikit-learn."
+            },
+            {
+                questions: ["what is cognixai", "tell me about cognixai"],
+                answer: "CognixAI is a personal AI assistant I built using Python, PyQt, and Hugging Face API. It helps with daily tasks and queries, leveraging AI to provide efficient assistance."
+            },
+            {
+                questions: ["what is dialogue digest", "tell me about dialogue digest"],
+                answer: "Dialogue Digest is a web app I developed using Python, Flask, and NLP with the Pegasus model. It summarizes conversation-style text, making it easier to extract key points from dialogues."
+            },
+            {
+                questions: ["what is brain stroke prediction", "tell me about brain stroke prediction"],
+                answer: "The Brain Stroke Prediction System is a machine learning model I created using Python and scikit-learn. It predicts the likelihood of a brain stroke based on patient data, aiming to support early detection."
+            },
+            {
+                questions: ["what certifications do you have", "tell me about your certifications", "certifications"],
+                answer: "I have several certifications: PwC Launchpad Program – ERP (Feb 2025 - July 2025), covering IT Fundamentals, Java, RDBMS, SAP, and Salesforce; Azure AI Fundamentals – AI-900 (Microsoft certified, June 2025); Career Essentials in Generative AI (LinkedIn Learning, June 2025); and SQL Intermediate (Hackerrank, July 2025)."
+            },
+            {
+                questions: ["what skills do you have", "tell me about your skills", "skills"],
+                answer: "I have hands-on experience in Python, NLP, web development, machine learning, and SQL. I'm also skilled in using frameworks like Flask, PyQt, and scikit-learn, and I'm familiar with AI services like Hugging Face and Azure AI."
+            },
+            {
+                questions: ["what are your hobbies", "hobbies"],
+                answer: "Outside of tech, I enjoy reading books and playing chess, which help keep my mind sharp and creative."
+            },
+            {
+                questions: ["how can I contact you", "contact details"],
+                answer: "You can reach me via email at dakkatameghanareddy@gmail.com, or connect with me on GitHub (Meghanareddy236) or LinkedIn (meghanareddy236). Feel free to use the contact form on my portfolio as well!"
+            }
+        ];
+
+        function sendMessage() {
+            const userInput = chatInput.value.trim().toLowerCase();
+            if (!userInput) return;
+
+            // Add user message to chat body
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user';
+            userMessage.innerHTML = `<div class="message-content">${userInput}</div>`;
+            chatBody.appendChild(userMessage);
+
+            // Find matching answer
+            let response = "Sorry, I don't have an answer for that. Try asking about my projects, certifications, or skills!";
+            for (const qa of qaPairs) {
+                for (const question of qa.questions) {
+                    if (userInput.includes(question)) {
+                        response = qa.answer;
+                        break;
+                    }
+                }
+                if (response !== "Sorry, I don't have an answer for that. Try asking about my projects, certifications, or skills!") break;
+            }
+
+            // Add bot response
+            const botMessage = document.createElement('div');
+            botMessage.className = 'chat-message bot';
+            botMessage.innerHTML = `<div class="message-content">${response}</div>`;
+            chatBody.appendChild(botMessage);
+
+            // Clear input and scroll to bottom
+            chatInput.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Allow sending message with Enter key
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
