@@ -18,13 +18,14 @@
 
         body {
             scroll-behavior: smooth;
-            background: linear-gradient(135deg, #fffaf0, #f5d7bd, #d3e5cb);
             color: #000000;
-            transition: color 0.3s, background 0.5s;
+            background-color: #DCC5B2;
+            transition: color 0.3s, background-color 0.5s;
         }
+        
 
         body.dark-mode {
-            background: linear-gradient(135deg, #2c1e1e, #60373a, #2f4f4f);
+            background: black;
             color: #e2e8f0;
         }
 
@@ -32,14 +33,15 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: #ffffff;
+            background: #000000;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             z-index: 1000;
-            padding: 0.8rem 1rem;
+            padding: 1rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-radius: 0 0 10px 10px;
+            
         }
 
         .dark-mode .navbar {
@@ -49,7 +51,7 @@
         .navbar .logo {
             font-size: 1.4rem;
             font-weight: 600;
-            color: #9f2531;
+            color:white;
         }
 
         .nav-links {
@@ -59,7 +61,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #5d6778;
+            color: white;
             font-weight: 400;
             font-size: 0.9rem;
             transition: color 0.3s;
@@ -71,8 +73,8 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #740e18;
-            border-bottom: 2px solid #170b0d;
+            color:grey;
+            
         }
 
         .hamburger {
@@ -104,14 +106,15 @@
             min-height: 110vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #fffaf0, #f5d7bd, #d3e5cb);
             position: relative;
             overflow: hidden;
             padding-top: 70px;
         }
 
         .dark-mode .hero {
-            background: linear-gradient(135deg, #2c1e1e, #60373a, #2f4f4f);
+            
+            color: #ffffff;
+            background-color: black;
         }
 
         .hero::before {
@@ -121,7 +124,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            
             animation: backgroundPulse 8s infinite ease-in-out;
             z-index: -1;
         }
@@ -139,6 +142,31 @@
             gap: 1.5rem;
             flex-direction: row-reverse;
         }
+        
+        .hero-img {
+            width: 100%;
+            max-width: 400px;       /* Limit width to avoid overflowing */
+            height: auto;           /* Maintain aspect ratio */
+            /* Ensures the full image fits inside */
+            display: block;         /* Removes bottom whitespace */
+        }
+        .hero-img img {
+        width: 350px;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 8px;
+        object-position: center top;
+        
+        
+        transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.3s ease;
+        
+        /* Optional aesthetics */
+        
+        filter: brightness(100%);
+        }
+
+
+
 
         .hero-text {
             opacity: 0;
@@ -173,6 +201,9 @@
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 1s;
         }
+        .dark-mode h1{
+            color: #ffffff;
+        }
         .dark-mode .hero-text h2{
             color: #4b030a ;
         }
@@ -195,7 +226,7 @@
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: #740e18;
+            background: #000000;    
             color: #fff;
             border: none;
             text-decoration: none;
@@ -222,6 +253,10 @@
             transform: translate(-50%, -50%);
             transition: width 0.4s, height 0.4s;
         }
+        .dark-mode .btn{
+            background: grey;    
+            color: black;
+        }
 
         .btn:hover::after {
             width: 200px;
@@ -229,7 +264,7 @@
         }
 
         .btn:hover {
-            background: #cd2e3e;
+            background: #575555;
             transform: translateY(-2px) scale(1.05);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -254,6 +289,7 @@
             to { opacity: 1; transform: scale(1); }
         }
         
+        
         .projects, .certifications, .contact {
             max-width: 1000px;
             margin: 0 auto;
@@ -262,7 +298,7 @@
         .about{
             max-width: 1000px;
             margin: 0 auto;
-            padding: 10rem 0rem;
+            
         }
 
         h2 {
@@ -281,7 +317,7 @@
         }
 
         .about-box {
-            background: #ffffff;
+            background: #f5f3ef;
             padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
@@ -321,7 +357,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: #ffffff;
+            background: #f5f3ef;
             padding: 1rem;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -396,6 +432,7 @@
         .certifications-timeline {
             position: relative;
             padding-left: 1.5rem;
+            
         }
 
         .certification-item {
@@ -420,7 +457,7 @@
         .certification-item h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: #2d3748;
+            color: #0e0e0e;
         }
 
         .dark-mode .certification-item h3 {
@@ -429,7 +466,7 @@
 
         .certification-item p {
             font-size: 0.9rem;
-            color: #4a5568;
+            color: #3a3d42;
         }
 
         .dark-mode .certification-item p {
@@ -437,16 +474,15 @@
         }
 
         .certificate-img {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 0.8rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    display: block;
+    margin: 0.8rem 0; /* removes auto centering */
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
         
 
         .contact form {
@@ -523,7 +559,7 @@
         .footer {
             text-align: center;
             padding: 1.5rem 1rem;
-            background: #ffffff;
+            background: #5a5858;
             border-radius: 10px 10px 0 0;
         }
 
@@ -540,7 +576,7 @@
         }
 
         .footer-links a {
-            color: #851e1e;
+            color: white;
             font-size: 0.9rem;
             text-decoration: none;
             font-weight: 600;
@@ -551,7 +587,7 @@
         }
 
         .footer-links a:hover {
-            color: #c96a6a;
+            color: rgb(162, 157, 157);
         }
 
         .footer-links i {
@@ -561,20 +597,20 @@
         .back-to-top {
             display: inline-block;
             margin-top: 0.5rem;
-            color: #740e18;
+            color: black;
             text-decoration: none;
             font-size: 0.9rem;
         }
 
         .back-to-top:hover {
-            color: #cd2e3e;
+            color: #918d8d;
         }
 
         .chat-bubble {
             position: fixed;
             bottom: 15px;
             right: 15px;
-            background: #740e18;
+            background: #000000;
             color: #fff;
             padding: 1.2rem 1.8rem;
             border-radius: 30px;
@@ -589,16 +625,16 @@
         }
 
         .chat-bubble:hover {
-            background: #cd2e3e;
+            background: #454444;
             transform: translateY(-3px);
         }
 
         .dark-mode .chat-bubble {
-            background: #cd2e3e;
+            background: #232121;
         }
 
         .dark-mode .chat-bubble:hover {
-            background: #e55361;
+            background: #9f9999;
         }
 
         .chat-bubble i {
@@ -622,7 +658,7 @@
         }
 
         .dark-mode .chat-modal {
-            background: #2d3748;
+            background: #97a8c7;
         }
 
         .chat-modal.active {
@@ -630,7 +666,7 @@
         }
 
         .chat-header {
-            background: #740e18;
+            background:#121212;
             color: #fff;
             padding: 0.8rem;
             font-size: 1.1rem;
@@ -640,7 +676,7 @@
         }
 
         .dark-mode .chat-header {
-            background: #cd2e3e;
+            background: #1e1e1e;
         }
 
         .chat-close {
@@ -656,7 +692,7 @@
         }
 
         .dark-mode .chat-body {
-            background: #4a5568;
+            background: #5a5b5e;
         }
 
         .chat-message {
@@ -681,21 +717,22 @@
         }
 
         .chat-message.user .message-content {
-            background: #740e18;
+            background: #282727;
+
             color: #fff;
         }
 
         .dark-mode .chat-message.user .message-content {
-            background: #cd2e3e;
+            background: #0e0e0e;
         }
 
         .chat-message.bot .message-content {
-            background: #e2e8f0;
-            color: #2d3748;
+            background:#9b9797;
+            color: #000000;
         }
 
         .dark-mode .chat-message.bot .message-content {
-            background: #718096;
+            background: #141515;
             color: #e2e8f0;
         }
 
@@ -707,7 +744,7 @@
         }
 
         .dark-mode .chat-input {
-            background: #2d3748;
+            background: #151515;
             border-top: 1px solid #718096;
         }
 
@@ -721,14 +758,14 @@
         }
 
         .dark-mode .chat-input input {
-            background: #4a5568;
+            background: #c5c6c8;
             border-color: #718096;
-            color: #e2e8f0;
+            color: #252526;
         }
 
         .chat-input button {
             padding: 0.7rem 1rem;
-            background: #740e18;
+            background: #282727;
             color: #fff;
             border: none;
             border-radius: 12px;
@@ -738,16 +775,17 @@
         }
 
         .chat-input button:hover {
-            background: #cd2e3e;
+            background: #504b4c;
         }
 
         .dark-mode .chat-input button {
-            background: #cd2e3e;
+            background: #000000;
         }
 
         .dark-mode .chat-input button:hover {
-            background: #e55361;
+            background: #5a5b5e;
         }
+        
 
         @media (max-width: 768px) {
             .navbar {
@@ -1136,22 +1174,9 @@
 
         }
         
-.hero-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
 
-.hero-img img {
-  width: 200px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 70%;
-  object-position: center top;
-  border: 3px solid #800000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+
+
     </style>
 </head>
 <body>
@@ -1169,6 +1194,7 @@
     </nav>
 
     <section id="home" class="hero section">
+        <div class="hero-img"><img src="gibi4.png" alt="Meghana Dakkata" onerror="this.src='https://via.placeholder.com/200';"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-nametitle">
@@ -1179,8 +1205,9 @@
                 <br>
                 <a href="https://drive.google.com/file/d/1_GMR4DggoYDjUxziaNaiFLsPUnY0AwE0/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
             </div>
-            <div class="hero-img"><img src="po.jpg" alt="Meghana Dakkata" onerror="this.src='https://via.placeholder.com/200';"></div>
+            
         </div>
+        
     </section>
 
     <section id="about" class="about section" style="text-align: left;">
@@ -1451,8 +1478,13 @@
         // Predefined question-answer pairs based on portfolio
         const qaPairs = [
             {
-                questions: ["who are you?","who are you", "tell me about yourself?","tell me about yourself", "about meghana","who is Meghana?","who is Meghana"],
-                answer: "I'm Dakkata Meghana, a final year B.Tech student in Computer Science & Engg (Data Science) at CMR Institute of Technology. I'm passionate about AI and ML, with experience in Python and hands-on projects. I enjoy reading books and playing chess in my free time."
+                questions: ["hi","hii","hiii","hello","helloo","hii there","hi there","holla","holaa","hiee"],
+                answer: "Hi there ! Hope you are having a good day.Let me know , what you want to know about meghana."
+                
+            },
+            {
+                questions: ["who are you?","i want to know about Meghana", "tell me about meghana?","tell me about meghana", "about meghana","who is Meghana?","who is Meghana"],
+                answer: "I'm Dakkata Meghana, a final year B.Tech student in Computer Science & Engg (Data Science) at CMR Institute of Technology. passionate about AI and ML, with experience in Python and hands-on projects. she enjoy reading books and playing chess in her free time."
             },
             {
                 questions: ["what projects have you worked on","what are your projects?", "tell me about your projects", "projects","what are your projects"],
@@ -1483,7 +1515,7 @@
                 answer: "Outside of tech, I enjoy reading books and playing chess, which help keep me engaging and creative."
             },
             {
-                questions: ["how can I contact you", "contact details","how can i contact Meghana"],
+                questions: ["how can I contact you", "contact details","how can i contact Meghana","I want to talk to meghana"],
                 answer: "You can reach me via email at   dakkatameghanareddy@gmail.com  , or connect with me on GitHub (Meghanareddy236) or LinkedIn (meghanareddy236)."
             },
             {
@@ -1503,7 +1535,7 @@
             answer: "'Atomic Habits' by James Clear is one of my favorite books. It taught me how small daily improvements can lead to big long-term changes. I also enjoy tech blogs, research papers, and LinkedIn articles to stay updated."
             },
             {
-            questions: ["what are your future goals", "what do you want to do after graduation", "what are your career goals","goals"],
+            questions: ["what are your future goals", "what do you want to do after graduation", "what are your career goals","goals","your goals"],
             answer: "I aim to become an AI/ML developer and contribute to impactful projects in natural language processing, healthcare AI, or ethical tech. I'm also passionate about tech education and hope to mentor others as I grow."
              },
              {
