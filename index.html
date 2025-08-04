@@ -21,6 +21,9 @@
             color: #000000;
             background-color: #DCC5B2;
             transition: color 0.3s, background-color 0.5s;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
         
 
@@ -787,372 +790,411 @@
         }
         
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.6rem 1rem;
+            @media (max-width: 768px) {
+                .navbar {
+                    padding: 0.6rem 1rem;
+                }
+
+                .navbar .logo {
+                    font-size: 1.2rem;
+                }
+
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 50px;
+                    left: 0; /* Align hamburger menu to the left */
+                    width: 200px;
+                    background: #ffffff;
+                    padding: 0.8rem;
+                    border-radius: 0 0 10px 0;
+                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+                }
+
+                .dark-mode .nav-links {
+                    background: #2d3748;
+                }
+
+                .nav-links.active {
+                    display: flex;
+                }
+
+                .nav-links a {
+                    font-size: 1rem;
+                    padding: 0.5rem 0;
+                    text-align: left;
+                }
+
+                .hamburger {
+                    display: block;
+    /* Move hamburger to the left */
+                    margin-left: 15px; 
+                }
+
+                .theme-toggle {
+                    font-size: 1rem;
+                }
+
+                .hero {
+    min-height: 70vh;
+    padding: 70px 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.hero-text {
+    max-width: 100%;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 1.6rem;
+}
+
+.hero-text h2 {
+    font-size: 1rem;
+}
+
+.hero-text p {
+    font-size: 0.8rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.hero img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+}
+
+
+                .btn {
+                    padding: 0.6rem 1.2rem;
+                    font-size: 0.8rem;
+                }
+
+                .btn::after {
+                    width: 0;
+                    height: 0;
+                }
+
+                .btn:hover::after {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                .about {
+                    padding: 2rem 1rem;
+                }
+
+                .about-heading {
+                    font-size: 1.6rem;
+                }
+
+                .about-box {
+                    padding: 1rem;
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+                }
+
+                .projects-heading, .certifications-heading, .contact-heading {
+                    font-size: 1.6rem;
+                }
+
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+
+                .project-card {
+                    padding: 0.8rem;
+                }
+
+                .project-card img {
+                    height: 120px;
+                }
+
+                .project-card h3 {
+                    font-size: 1.2rem;
+                }
+
+                .project-card p {
+                    font-size: 0.8rem;
+                }
+
+                .tech-badges span {
+                    font-size: 0.7rem;
+                    padding: 0.2rem 0.5rem;
+                }
+
+                .certifications-timeline {
+                    padding-left: 1rem;
+                }
+
+                .certification-item {
+                    margin-bottom: 1rem;
+                    padding-left: 0.8rem;
+                }
+
+                .certification-item h3 {
+                    font-size: 1.1rem;
+                }
+
+                .certification-item p {
+                    font-size: 0.8rem;
+                }
+
+                .certificate-img {
+                    max-width: 200px;
+                }
+
+                .contact form {
+                    padding: 1rem;
+                }
+
+                .form-group input,
+                .form-group textarea {
+                    padding: 0.6rem;
+                    font-size: 0.8rem;
+                }
+
+                .form-group label {
+                    font-size: 0.8rem;
+                }
+
+                .form-group input:focus + label,
+                .form-group textarea:focus + label,
+                .form-group input:not(:placeholder-shown) + label,
+                .form-group textarea:not(:placeholder-shown) + label {
+                    font-size: 0.6rem;
+                }
+
+                .footer {
+                    padding: 1rem;
+                }
+
+                .footer-links a {
+                    font-size: 0.8rem;
+                }
+
+                .footer-links i {
+                    font-size: 0.9rem;
+                }
+
+                .back-to-top {
+                    font-size: 0.8rem;
+                }
+
+                .chat-bubble {
+                    padding: 1.2rem 1.8rem;
+                    font-size: 1rem;
+                    bottom: 15px;
+                    right: 15px;
+                }
+
+                .chat-bubble i {
+                    font-size: 1.2rem;
+                }
+
+                .chat-modal {
+                    bottom: 90px;
+                    right: 15px;
+                    max-height: 400px;
+                }
+
+                .chat-header {
+                    font-size: 1.1rem;
+                    padding: 0.8rem;
+                }
+
+                .chat-close {
+                    font-size: 1.2rem;
+                }
+
+                .chat-body {
+                    padding: 0.8rem;
+                }
+
+                .chat-message .message-content {
+                    font-size: 0.9rem;
+                    padding: 0.8rem;
+                }
+
+                .chat-input {
+        display: flex;
+        width: 100%;
+        padding: 0.6rem;
+        box-sizing: border-box;
+    }
+
+    .chat-input input {
+        width: 100%;
+    }
+
+    .chat-input button {
+        width:100%;
+        background-color: #800020;
+        color: white;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+
+
             }
 
-            .navbar .logo {
-                font-size: 1.2rem;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                left: 0; /* Align hamburger menu to the left */
-                width: 200px;
-                background: #ffffff;
-                padding: 0.8rem;
-                border-radius: 0 0 10px 0;
-                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
-            }
-
-            .dark-mode .nav-links {
-                background: #2d3748;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-                padding: 0.5rem 0;
-                text-align: left;
-            }
-
-            .hamburger {
-                display: block;
- /* Move hamburger to the left */
-                margin-left: 15px; 
-            }
-
-            .theme-toggle {
-                font-size: 1rem;
-            }
-
-            .hero {
-                min-height: 80vh;
-                padding: 70px 1rem 2rem; /* Ensure profile image is visible */
-            }
-
-            .hero-content {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .hero-nametitle {
-                justify-content: center;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-text h2 {
-                font-size: 1.2rem;
-            }
-
-            .hero-text p {
-                font-size: 0.9rem;
-            }
-
-            .hero img {
+            @media (max-width: 480px) {
+                .navbar .logo {
+                    font-size: 1.1rem;
+                }
+                .hero img {
                 width: 120px;
                 height: 120px;
+                
             }
+                .nav-links {
+                    top: 45px;
+                    padding: 0.6rem;
+                    width: 180px;
+                }
 
-            .btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.8rem;
-            }
+                .nav-links a {
+                    font-size: 0.9rem;
+                }
 
-            .btn::after {
-                width: 0;
-                height: 0;
-            }
+                .hamburger {
+                    font-size: 1.3rem;
+                    margin-left: 15px;
+                }
 
-            .btn:hover::after {
-                width: 150px;
-                height: 150px;
-            }
+                .theme-toggle {
+                    font-size: 0.9rem;
+                }
 
-            .about {
-                padding: 2rem 1rem;
-            }
-
-            .about-heading {
-                font-size: 1.6rem;
-            }
-
-            .about-box {
-                padding: 1rem;
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            .projects-heading, .certifications-heading, .contact-heading {
-                font-size: 1.6rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .project-card {
-                padding: 0.8rem;
-            }
-
-            .project-card img {
-                height: 120px;
-            }
-
-            .project-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .project-card p {
-                font-size: 0.8rem;
-            }
-
-            .tech-badges span {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.5rem;
-            }
-
-            .certifications-timeline {
-                padding-left: 1rem;
-            }
-
-            .certification-item {
-                margin-bottom: 1rem;
-                padding-left: 0.8rem;
-            }
-
-            .certification-item h3 {
-                font-size: 1.1rem;
-            }
-
-            .certification-item p {
-                font-size: 0.8rem;
-            }
-
-            .certificate-img {
-                max-width: 200px;
-            }
-
-            .contact form {
-                padding: 1rem;
-            }
-
-            .form-group input,
-            .form-group textarea {
-                padding: 0.6rem;
-                font-size: 0.8rem;
-            }
-
-            .form-group label {
-                font-size: 0.8rem;
-            }
-
-            .form-group input:focus + label,
-            .form-group textarea:focus + label,
-            .form-group input:not(:placeholder-shown) + label,
-            .form-group textarea:not(:placeholder-shown) + label {
-                font-size: 0.6rem;
-            }
-
-            .footer {
-                padding: 1rem;
-            }
-
-            .footer-links a {
-                font-size: 0.8rem;
-            }
-
-            .footer-links i {
-                font-size: 0.9rem;
-            }
-
-            .back-to-top {
-                font-size: 0.8rem;
-            }
-
-            .chat-bubble {
-                padding: 1.2rem 1.8rem;
-                font-size: 1rem;
-                bottom: 15px;
-                right: 15px;
-            }
-
-            .chat-bubble i {
-                font-size: 1.2rem;
-            }
-
-            .chat-modal {
-                bottom: 90px;
-                right: 15px;
-                max-height: 400px;
-            }
-
-            .chat-header {
-                font-size: 1.1rem;
-                padding: 0.8rem;
-            }
-
-            .chat-close {
-                font-size: 1.2rem;
-            }
-
-            .chat-body {
-                padding: 0.8rem;
-            }
-
-            .chat-message .message-content {
-                font-size: 0.9rem;
-                padding: 0.8rem;
-            }
-
-            .chat-input {
+                .hero {
+    min-height: 70vh;
+    padding: 70px 0.5rem 1.5rem;
     display: flex;
-    width: 100%;
-    padding: 0.6rem;
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
 }
 
-.chat-input input {
-    width: 100%;
+.hero-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
 }
 
-.chat-input button {
-    width:100%;
-    background-color: #800020;
-    color: white;
-    cursor: pointer;
-    white-space: nowrap;
+.hero-text {
+    max-width: 100%;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 1.6rem;
+}
+
+.hero-text h2 {
+    font-size: 1rem;
+}
+
+.hero-text p {
+    font-size: 0.8rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.hero img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
 }
 
 
+                .about-heading, .projects-heading, .certifications-heading, .contact-heading {
+                    font-size: 1.4rem;
+                }
 
-        }
+                .about-box {
+                    padding: 0.8rem;
+                    font-size: 0.8rem;
+                }
 
-        @media (max-width: 480px) {
-            .navbar .logo {
-                font-size: 1.1rem;
-            }
-             .hero img {
-            width: 120px;
-            height: 120px;
-            
-        }
-            .nav-links {
-                top: 45px;
-                padding: 0.6rem;
-                width: 180px;
-            }
+                .project-card img {
+                    height: 100px;
+                }
 
-            .nav-links a {
-                font-size: 0.9rem;
-            }
+                .project-card h3 {
+                    font-size: 1rem;
+                }
 
-            .hamburger {
-                font-size: 1.3rem;
-                margin-left: 15px;
-            }
+                .certificate-img {
+                    max-width: 180px;
+                }
 
-            .theme-toggle {
-                font-size: 0.9rem;
-            }
+                .chat-bubble {
+                    padding: 1rem 1.5rem;
+                    font-size: 0.9rem;
+                    bottom: 10px;
+                    right: 10px;
+                }
 
-            .hero {
-                min-height: 70vh;
-                padding: 70px 0.5rem 1.5rem;
-            }
+                .chat-bubble i {
+                    font-size: 1.1rem;
+                }
 
-            .hero-text h1 {
-                font-size: 1.6rem;
-            }
+                .chat-modal {
+                    max-width: 300px;
+                    max-height: 350px;
+                }
 
-            .hero-text h2 {
-                font-size: 1rem;
-            }
+                .chat-header {
+                    font-size: 1rem;
+                    padding: 0.6rem;
+                }
 
-            .hero-text p {
-                font-size: 0.8rem;
-            }
+                .chat-close {
+                    font-size: 1.1rem;
+                }
 
-            .hero img {
-                width: 100px;
-                height: 100px;
-            }
+                .chat-body {
+                    padding: 0.6rem;
+                }
 
-            .btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.7rem;
-            }
+                .chat-message .message-content {
+                    font-size: 0.8rem;
+                    padding: 0.6rem;
+                }
 
-            .about-heading, .projects-heading, .certifications-heading, .contact-heading {
-                font-size: 1.4rem;
-            }
-
-            .about-box {
-                padding: 0.8rem;
-                font-size: 0.8rem;
-            }
-
-            .project-card img {
-                height: 100px;
-            }
-
-            .project-card h3 {
-                font-size: 1rem;
-            }
-
-            .certificate-img {
-                max-width: 180px;
-            }
-
-            .chat-bubble {
-                padding: 1rem 1.5rem;
-                font-size: 0.9rem;
-                bottom: 10px;
-                right: 10px;
-            }
-
-            .chat-bubble i {
-                font-size: 1.1rem;
-            }
-
-            .chat-modal {
-                max-width: 300px;
-                max-height: 350px;
-            }
-
-            .chat-header {
-                font-size: 1rem;
-                padding: 0.6rem;
-            }
-
-            .chat-close {
-                font-size: 1.1rem;
-            }
-
-            .chat-body {
-                padding: 0.6rem;
-            }
-
-            .chat-message .message-content {
-                font-size: 0.8rem;
-                padding: 0.6rem;
-            }
-
-            .chat-input {
-                flex-direction: column;
-}
+                .chat-input {
+                    flex-direction: column;
+    }
 
 .chat-input input {
     width:100%;
@@ -1165,7 +1207,7 @@
     border: none;
     
     border-radius: 0.5rem;
-    background-color: #800020;
+    background-color: #212121;
     color: white;
     white-space: nowrap;
 }
