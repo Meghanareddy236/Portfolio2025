@@ -1061,6 +1061,21 @@
         cursor: pointer;
         white-space: nowrap;
     }
+    .modal-content {
+    width: 95%; /* Better than full width */
+    height: 90vh; /* Slightly taller for better visibility */
+    padding: 0.5rem; /* Reduced padding */
+  }
+
+  .modal-content iframe {
+    height: 100%; /* Ensure iframe uses full height */
+  }
+
+  .close {
+    font-size: 1.2rem;
+    top: 5px;
+    right: 10px;
+  }
 
 
 
@@ -1216,9 +1231,35 @@
     background-color: #212121;
     color: white;
     white-space: nowrap;
-}
 
 }
+.modal-content {
+    width: 95%;
+    height: 90vh;
+    padding: 0.5rem;
+    border-radius: 8px;
+    overflow: auto;
+  }
+
+  .modal-content iframe,
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    flex: 1;
+  }
+
+  .close {
+    font-size: 1.2rem;
+    top: 8px;
+    right: 10px;
+  }
+
+
+}
+
+
+
 /* ------------------ Resume Modal ------------------ */
 .modal {
   display: none;
