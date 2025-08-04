@@ -1298,8 +1298,8 @@ h2 {
     }
 
     .modal-content {
-        width: 90%;
-        height: 70vh;
+        width: 100%;
+        height: 40vh;
         padding: 0.5rem;
         border-radius: 8px;
         overflow: hidden;
@@ -1347,7 +1347,7 @@ h2 {
     padding: 1rem;
     width: 100%;
     max-width: 700px;
-    height: 80vh;
+    height:70vh;
     border-radius: 12px;
     position: relative;
     display: flex;
