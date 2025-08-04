@@ -1112,12 +1112,24 @@ h2 {
         cursor: pointer;
         white-space: nowrap;
     }
+    .modal{
+        position: relative;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
 
     .modal-content {
-        width: 90%;
+        width: 100%;
         height: 90vh;
-        padding: 0.75rem;
-        border-radius: 10px;
+        padding: 0;
+        border-radius: 8px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -1131,10 +1143,13 @@ h2 {
     }
 
     .close {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         top: 10px;
-        right: 15px;
+        right: 12px;
     }
+
+    
+
 
 
 
