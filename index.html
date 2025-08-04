@@ -197,6 +197,7 @@
             padding: 0.8rem 1.5rem;
             background: #740e18;
             color: #fff;
+            border: none;
             text-decoration: none;
             border-radius: 25px;
             transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -1182,20 +1183,58 @@
         </div>
     </section>
 
-    <section id="about" class="about section">
-        <h2 class="about-heading">About Me</h2>
-        <div class="about-box">
-            <p>
-                I'm <strong>Dakkata Meghana</strong>, a final-year B.Tech student in Computer Science and Engineering (Data Science specialization) at CMR Institute of Technology.
-                <br><br>
-                -> My interests lie in AI, Machine Learning, GenAI, and Natural Language Processing. I’ve worked on several AI-powered projects using Python, automation, and web technologies.
-                <br><br>
-                -> I was recently selected as a PWC Launchpad Trainee 2025 (ERP track). I’m also certified in Azure AI Fundamentals and hold a 4-star badge in SQL (Intermediate) on HackerRank.
-                <br><br>
-                -> Outside the tech space, I love reading books and playing chess — they help keep my mind focused and creative.
-            </p>
-        </div>
-    </section>
+    <section id="about" class="about section" style="text-align: left;">
+    <h2 class="about-heading">About Me</h2>
+    <div class="about-box">
+        <p>
+            I'm <strong>Dakkata Meghana Reddy</strong>, a final-year B.Tech student specializing in Computer Science and Engineering – Data Science  at CMR Institute of Technology, Hyderabad.
+            <br><br>
+            I'm passionate about AI, Machine Learning, Generative AI, and Natural Language Processing. I enjoy building AI-powered solutions. Outside the tech world, I love reading books and playing chess — they keep me engaging and creative.
+        </p>
+        <br>
+
+        <h3>📘 Education</h3>
+        <br>
+        <p>
+            <strong>B.Tech in Computer Science and Engineering (Data Science)</strong><br>
+            CMR Institute of Technology, Hyderabad<br>
+            <strong>2022 – 2026</strong> with CGPA: 9.1
+        </p>
+        <br>
+
+        <h3>🚀 Internships & Experience</h3>
+        <br>
+        <ul><li><p>
+            <strong>PWC Launchpad Trainee – ERP Track</strong> (Feb 2025 – July 2025)<br>
+            Trained in IT Fundamentals, Java, RDBMS, SAP, and Salesforce.
+        </p></li>
+        <li><p>
+            
+            <strong>SheFi Scholar (Cohort 15)</strong><br>
+            Selected for a fully-funded Web3 education program focused on DeFi, NFTs, DAOs, and blockchain technologies. Chosen from over 2,000+ global applicants.
+        </p></li></ul>
+        <br>
+
+        <h3>📜 Certifications</h3>
+        <br>
+        <ul>
+            <li>Azure AI Fundamentals (AI-900) certified – Microsoft, June 2025</li>
+            <li>Generative AI – LinkedIn Learning, June 2025</li>
+            <li>SQL Intermediate – HackerRank, July 2025 (4-star badge)</li>
+        </ul>
+        <br>
+
+        <h3>🎯 Interests</h3>
+        <br>
+        <ul>
+            <li>Artificial Intelligence & Machine Learning</li>
+            <li>Generative AI & Natural Language Processing</li>
+            <li>Reading Books & Playing Chess</li>
+        </ul>
+    </div>
+</section>
+
+
 
     <section id="projects" class="projects section">
         <h2 class="projects-heading">Projects</h2>
@@ -1412,23 +1451,23 @@
         // Predefined question-answer pairs based on portfolio
         const qaPairs = [
             {
-                questions: ["who are you", "tell me about yourself", "about meghana","who is Meghana"],
-                answer: "I'm Dakkata Meghana, a B.Tech student in Computer Science and Data Science at CMR Institute of Technology. I'm passionate about AI, ML, and automation, with experience in Python, NLP, and web development. I enjoy reading books and playing chess in my free time."
+                questions: ["who are you?","who are you", "tell me about yourself?","tell me about yourself", "about meghana","who is Meghana?","who is Meghana"],
+                answer: "I'm Dakkata Meghana, a final year B.Tech student in Computer Science & Engg (Data Science) at CMR Institute of Technology. I'm passionate about AI and ML, with experience in Python and hands-on projects. I enjoy reading books and playing chess in my free time."
             },
             {
-                questions: ["what projects have you worked on","what are your projects?", "tell me about your projects", "projects"],
+                questions: ["what projects have you worked on","what are your projects?", "tell me about your projects", "projects","what are your projects"],
                 answer: "I've worked on several projects, including CognixAI, a personal AI assistant built with Python, PyQt, and Hugging Face API; Dialogue Digest, a web app for summarizing conversation-style text using NLP with the Pegasus model; and a Brain Stroke Prediction System, a machine learning model built with Python and scikit-learn."
             },
             {
-                questions: ["what is cognixai", "tell me about cognixai"],
-                answer: "CognixAI is a personal AI assistant I built using Python, PyQt, and Hugging Face API. It helps with daily tasks and queries, leveraging AI to provide efficient assistance."
+                questions: ["what is cognixai?", "tell me about cognixai","what is cognixai","cognixai","which teck stack used in cognixai"],
+                answer: "CognixAI is a personal AI assistant I built using Python, PyQt, and Hugging Face API. It helps with daily tasks and queries in real time, leveraging AI to provide efficient assistance."
             },
             {
-                questions: ["what is dialogue digest","which techstack u used in dialogue digest", "tell me about dialogue digest"],
+                questions: ["what is dialogue digest","which techstack u used in dialogue digest", "tell me about dialogue digest","what is dialogue digest","dialogue digest"],
                 answer: "Dialogue Digest is a web app I developed using Python, Flask, and NLP with the Pegasus model. It summarizes conversation-style text, making it easier to extract key points from dialogues."
             },
             {
-                questions: ["what is brain stroke prediction", "what teckstack you used in brain stroke prediction project?","tell me about brain stroke prediction"],
+                questions: ["what is brain stroke prediction", "what teckstack you used in brain stroke prediction project?","tell me about brain stroke prediction","brain stroke prediction"],
                 answer: "The Brain Stroke Prediction System is a machine learning model I created using Python and scikit-learn. It predicts the likelihood of a brain stroke based on patient data, aiming to support early detection."
             },
             {
@@ -1437,16 +1476,47 @@
             },
             {
                 questions: ["what skills do you have", "tell me about your skills", "skills"],
-                answer: "I have hands-on experience in Python, NLP, web development, machine learning, and SQL. I'm also skilled in using frameworks like Flask, PyQt, and scikit-learn, and I'm familiar with AI services like Hugging Face and Azure AI."
+                answer: "I have hands-on experience in Python, NLP, machine learning, and SQL.I'm familiar with AI services like Hugging Face and Azure AI."
             },
             {
                 questions: ["what are your hobbies", "hobbies"],
-                answer: "Outside of tech, I enjoy reading books and playing chess, which help keep my mind sharp and creative."
+                answer: "Outside of tech, I enjoy reading books and playing chess, which help keep me engaging and creative."
             },
             {
                 questions: ["how can I contact you", "contact details","how can i contact Meghana"],
-                answer: "You can reach me via email at   dakkatameghanareddy@gmail.com  , or connect with me on GitHub (Meghanareddy236) or LinkedIn (meghanareddy236). Feel free to use the contact form on my portfolio as well!"
+                answer: "You can reach me via email at   dakkatameghanareddy@gmail.com  , or connect with me on GitHub (Meghanareddy236) or LinkedIn (meghanareddy236)."
+            },
+            {
+                questions: ["what is shefi?","what is shefi?", "what is the shefi scholarship", "are you a shefi scholar", "tell me about shefi"],
+                answer: "Yes, I was selected as a SheFi Scholar for Cohort 15. SheFi is a global Web3 learning initiative focused on empowering women and non-binary individuals in blockchain, crypto, DeFi, and NFTs."
+            },
+            {
+            questions: ["why did you choose ai", "why are you interested in ai/ml", "what inspired your interest in machine learning"],
+            answer: "I've always been fascinated by how machines can learn from data and solve real-world problems. AI and ML offer endless possibilities—from personalized assistants to healthcare innovation—and I love building solutions that make technology more intelligent and accessible."
+            },
+            {
+            questions: ["what tech stack did you use for this portfolio", "which technologies did you use to build this site", "how was your portfolio built"],
+            answer: "This portfolio was built using HTML, CSS, and JavaScript with responsive design principles. I used hover effects, scroll animations, and dark/light mode toggles to enhance user experience. The code is hosted on GitHub and deployed using GitHub Pages."
+            },
+            {
+            questions: ["what is your favorite book", "recommend a book", "what do you like to read","favourite book"],
+            answer: "'Atomic Habits' by James Clear is one of my favorite books. It taught me how small daily improvements can lead to big long-term changes. I also enjoy tech blogs, research papers, and LinkedIn articles to stay updated."
+            },
+            {
+            questions: ["what are your future goals", "what do you want to do after graduation", "what are your career goals","goals"],
+            answer: "I aim to become an AI/ML developer and contribute to impactful projects in natural language processing, healthcare AI, or ethical tech. I'm also passionate about tech education and hope to mentor others as I grow."
+             },
+             {
+                questions: ["what is your strength", "what makes you different", "what is your unique quality"],
+                answer: "I’m a strong self-learner with a growth mindset. I take initiative to explore new tools, build projects end-to-end, and always find ways to improve. My blend of technical knowledge and communication skills helps me collaborate effectively and deliver practical results."
             }
+
+
+
+
+
+
+
         ];
 
         function sendMessage() {
