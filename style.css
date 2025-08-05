@@ -1110,20 +1110,8 @@ h2 {
         padding: 0.2rem 0.5rem;
     }
 
-    .certifications-timeline {
-        padding: 1.5rem 0.8rem; /* Increased padding for better spacing */
-        box-sizing: border-box;
-    }
 
-    .certification-item {
-        margin-bottom: 1.2rem;
-        padding: 1rem; /* Slightly more padding for breathing room */
-        border-left: 2px solid rgba(0, 0, 0, 0.47); /* Thinner border for mobile */
-    }
-
-    .dark-mode .certification-item {
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-    }
+    
 
     .certification-item h3 {
         font-size: 1.2rem; /* Slightly larger for better readability */
@@ -1363,18 +1351,7 @@ h2 {
         font-size: 1rem;
     }
 
-    .certifications-timeline {
-        padding: 1rem 0.6rem; /* Further optimized padding */
-    }
-
-    .certification-item {
-        padding: 0.8rem; /* Consistent padding */
-        border-left: 2px solid rgba(0, 0, 0, 0.47); /* Consistent border */
-    }
-
-    .dark-mode .certification-item {
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-    }
+    
 
     .certification-item h3 {
         font-size: 1.1rem; /* Slightly smaller but readable */
