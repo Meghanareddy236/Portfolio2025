@@ -86,12 +86,12 @@ chatClose.addEventListener('click', () => {
 const qaPairs = [
     {
         questions: ["hi", "hii", "hiii", "hello", "helloo", "hii there", "hi there", "holla", "holaa", "hiee"],
-        answer: "Hi there ! Hope you are having a good day.Let me know , what you want to know about meghana."
+        answer: "Hi there ! Hope you are having a good day.Let me know , what you want to know about me."
 
     },
     {
         questions: ["who are you?", "i want to know about Meghana", "tell me about meghana?", "tell me about meghana", "about meghana", "who is Meghana?", "who is Meghana"],
-        answer: "I'm Dakkata Meghana, a final year B.Tech student in Computer Science & Engg (Data Science) at CMR Institute of Technology. passionate about AI and ML, with experience in Python and hands-on projects. she enjoy reading books and playing chess in her free time."
+        answer: "I'm Dakkata Meghana, a final year B.Tech student in Computer Science & Engg (Data Science) at CMR Institute of Technology. passionate about AI and ML, with experience in Python and hands-on projects. I enjoy reading books and playing chess in my free time."
     },
     {
         questions: ["what projects have you worked on", "what are your projects?", "tell me about your projects", "projects", "what are your projects"],
