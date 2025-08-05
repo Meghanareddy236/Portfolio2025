@@ -86,7 +86,7 @@ body.dark-mode {
 }
 
 .section {
-    padding: 4rem 2rem;
+    padding: 2rem 5rem;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s, transform 0.6s;
@@ -334,7 +334,7 @@ body.dark-mode {
     margin: 0 auto;
     background: #ffffff;
     border-radius: 12px;
-    padding: 3rem;
+    padding: 2rem;
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
@@ -407,7 +407,7 @@ h2 {
 .projects {
     background: #ffffff;
     border-radius: 12px;
-    padding: 3rem;
+    padding: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -423,7 +423,7 @@ h2 {
 
 .project-card {
     background: #f3f4f6;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 12px;
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
@@ -1030,6 +1030,7 @@ h2 {
         padding: 0.8rem;
         font-size: 0.8rem;
     }
+    
 
     .project-card img {
         height: 100px;
@@ -1038,9 +1039,12 @@ h2 {
     .project-card h3 {
         font-size: 1rem;
     }
-
+    
+    .certifications{
+        padding: 5rem 2rem;;
+    }
     .certification-item {
-        padding: 1rem;
+        padding: 0.5rem;
         border-left: 2px solid rgba(0, 0, 0, 0.47);
     }
 
