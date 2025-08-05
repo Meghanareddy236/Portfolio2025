@@ -9,8 +9,6 @@ html, body {
     margin: 0;
 }
 
-
-
 body {
     scroll-behavior: smooth;
     color: #000000;
@@ -18,9 +16,7 @@ body {
     transition: color 0.3s, background-color 0.5s;
     margin: 0;
     padding: 0;
-
 }
-
 
 body.dark-mode {
     background: black;
@@ -32,15 +28,12 @@ body.dark-mode {
     top: 0;
     width: 100%;
     background: #000000;
-    
     box-shadow: 2px 2px 7px 1px #CE5937;
     z-index: 1000;
     padding: 1rem 1rem;
     display: flex;  
     justify-content: space-between;
     align-items: center;
-
-
 }
 
 .dark-mode .navbar {
@@ -73,7 +66,6 @@ body.dark-mode {
 .nav-links a:hover,
 .nav-links a.active {
     color: grey;
-
 }
 
 .hamburger {
@@ -112,11 +104,9 @@ body.dark-mode {
     position: relative;
     overflow: hidden;
     padding-top: 70px;
-    
 }
 
 .dark-mode .hero {
-
     color: #ffffff;
     background-color: black;
 }
@@ -128,19 +118,15 @@ body.dark-mode {
     left: 0;
     width: 100%;
     height: 100%;
-
     animation: backgroundPulse 8s infinite ease-in-out;
     z-index: -1;
 }
 
 @keyframes backgroundPulse {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: scale(1);
         opacity: 0.3;
     }
-
     50% {
         transform: scale(1.2);
         opacity: 0.5;
@@ -159,13 +145,8 @@ body.dark-mode {
 .hero-img {
     width: 100%;
     max-width: 400px;
-    /* Limit width to avoid overflowing */
     height: auto;
-    /* Maintain aspect ratio */
-    /* Ensures the full image fits inside */
     display: block;
-    /* Removes bottom whitespace */
-    
 }
 
 .hero-img img {
@@ -174,17 +155,9 @@ body.dark-mode {
     object-fit: cover;
     border-radius: 8px;
     object-position: center top;
-
-
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.3s ease;
-
-    /* Optional aesthetics */
-
     filter: brightness(100%);
 }
-
-
-
 
 .hero-text {
     opacity: 0;
@@ -199,7 +172,6 @@ body.dark-mode {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    
 }
 
 .hero-text h1 {
@@ -242,8 +214,6 @@ body.dark-mode {
     color: #cbd5e0;
 }
 
-
-
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -251,7 +221,6 @@ body.dark-mode {
     color: #fff;
     border: none;
     border-radius: 25px;
-    
     box-shadow: 0 2px 8px rgba(231, 181, 181, 0.1);
     position: relative;
     overflow: hidden;
@@ -259,7 +228,6 @@ body.dark-mode {
     animation: fadeIn 1s ease-out forwards;
     animation-delay: 2s;
     font-size: 0.9rem;
-    
 }
 
 .btn::after {
@@ -290,6 +258,7 @@ body.dark-mode {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .pbtn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -301,8 +270,8 @@ body.dark-mode {
     font-weight: 500;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
-    text-align: center; /* Ensures text is centered horizontally */
-    line-height: 1.2; /* Improves vertical centering of text */
+    text-align: center;
+    line-height: 1.2;
 }
 
 .pbtn:hover {
@@ -319,7 +288,6 @@ body.dark-mode {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -330,7 +298,6 @@ body.dark-mode {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -340,7 +307,6 @@ body.dark-mode {
     from {
         width: 0;
     }
-
     to {
         width: 100%;
     }
@@ -351,15 +317,11 @@ body.dark-mode {
         opacity: 0;
         transform: scale(0.8);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
-
-
-
 
 .contact {
     max-width: 1000px;
@@ -464,10 +426,10 @@ h2 {
     padding: 1.5rem;
     border-radius: 12px;
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex; /* Use flexbox for better content alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: space-between; /* Distribute space between items */
-    height: 100%; /* Ensure card takes full height for consistent alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .dark-mode .project-card {
@@ -484,7 +446,7 @@ h2 {
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 1rem; /* Consistent spacing below image */
+    margin-bottom: 1rem;
 }
 
 .project-card h3 {
@@ -492,7 +454,7 @@ h2 {
     font-weight: 600;
     color: #1f2937;
     margin-bottom: 0.5rem;
-    text-align: left; /* Center-align title */
+    text-align: left;
 }
 
 .dark-mode .project-card h3 {
@@ -503,8 +465,8 @@ h2 {
     font-size: 0.9rem;
     color: #6b7280;
     margin-bottom: 1rem;
-    text-align:left; /* Center-align description */
-    flex-grow: 1; /* Allow description to expand and push button down */
+    text-align: left;
+    flex-grow: 1;
 }
 
 .dark-mode .project-card p {
@@ -516,7 +478,7 @@ h2 {
     gap: 0.5rem;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    justify-content:left; /* Center-align badges horizontally */
+    justify-content: left;
 }
 
 .tech-badges span {
@@ -525,7 +487,7 @@ h2 {
     border-radius: 12px;
     font-size: 0.8rem;
     color: #1f2937;
-    display: inline-block; /* Ensures consistent badge sizing */
+    display: inline-block;
 }
 
 .dark-mode .tech-badges span {
@@ -533,7 +495,6 @@ h2 {
     color: #e5e7eb;
 }
 
-/* Certifications Section Styles */
 .certifications-timeline {
     position: relative;
     padding-left: 1.5rem;
@@ -573,8 +534,6 @@ h2 {
     box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .certification-item h3 {
     font-size: 1.3rem;
     font-weight: 600;
@@ -613,7 +572,6 @@ h2 {
 .dark-mode .certificate-img {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
-
 
 .contact form {
     max-width: 600px;
@@ -848,7 +806,6 @@ h2 {
 
 .chat-message.user .message-content {
     background: #282727;
-
     color: #fff;
 }
 
@@ -921,11 +878,85 @@ h2 {
     font-size: 1.2rem;
     color: #740e18;
     min-height: 1.5em;
-    /* Prevents layout shift while typing */
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
 
+.modal-content {
+    background: #fff;
+    padding: 1rem;
+    width: 100%;
+    max-width: 700px;
+    height: 70vh;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease-in-out;
+}
 
+.modal-content iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-item {
+    background: #f5f3ef;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    display: block;
+    width: var(--progress);
+    height: 100%;
+    background: #9f2531;
+    transition: width 1s ease-in-out;
+}
+
+.dark-mode .skill-item {
+    background: #2d3748;
+}
 
 @media (max-width: 768px) {
     .navbar {
@@ -942,7 +973,6 @@ h2 {
         position: absolute;
         top: 50px;
         left: 0;
-        /* Align hamburger menu to the left */
         width: 200px;
         background: #ffffff;
         color: #000000;
@@ -968,7 +998,6 @@ h2 {
 
     .hamburger {
         display: block;
-        /* Move hamburger to the left */
         margin-left: 15px;
     }
 
@@ -1019,12 +1048,6 @@ h2 {
         margin: 0 auto;
         margin-bottom: 1rem;
     }
-
-    .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.7rem;
-    }
-
 
     .btn {
         padding: 0.6rem 1.2rem;
@@ -1088,24 +1111,34 @@ h2 {
     }
 
     .certifications-timeline {
-        padding-left: 1rem;
+        padding: 1.5rem 0.8rem; /* Increased padding for better spacing */
+        box-sizing: border-box;
     }
 
     .certification-item {
-        margin-bottom: 1rem;
-        padding-left: 0.8rem;
+        margin-bottom: 1.2rem;
+        padding: 1rem; /* Slightly more padding for breathing room */
+        border-left: 2px solid rgba(0, 0, 0, 0.47); /* Thinner border for mobile */
+    }
+
+    .dark-mode .certification-item {
+        border-left: 2px solid rgba(255, 255, 255, 0.2);
     }
 
     .certification-item h3 {
-        font-size: 1.1rem;
+        font-size: 1.2rem; /* Slightly larger for better readability */
+        margin-bottom: 0.6rem;
     }
 
     .certification-item p {
-        font-size: 0.8rem;
+        font-size: 0.85rem; /* Slightly larger for readability */
+        line-height: 1.4; /* Improved line height */
     }
 
     .certificate-img {
-        max-width: 200px;
+        max-width: 150px; /* Reduced to fit smaller screens */
+        width: 100%; /* Ensure it scales with container */
+        margin: 0.6rem auto; /* Centered with reduced margin */
     }
 
     .contact form {
@@ -1198,9 +1231,10 @@ h2 {
         cursor: pointer;
         white-space: nowrap;
     }
-    .modal{
+
+    .modal {
         position: relative;
-        top:0;
+        top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
@@ -1233,12 +1267,6 @@ h2 {
         top: 10px;
         right: 12px;
     }
-
-    
-
-
-
-
 }
 
 @media (max-width: 480px) {
@@ -1250,7 +1278,6 @@ h2 {
         top: 45px;
         padding: 0.6rem;
         width: 180px;
-
     }
 
     .nav-links a {
@@ -1304,20 +1331,17 @@ h2 {
 
     .hero img {
         width: 250px;
-        height: 350;
+        height: 350px;
         object-fit: cover;
         display: block;
         margin: 0 auto;
         margin-bottom: 1rem;
-        ;
-
     }
 
     .btn {
         padding: 0.5rem 1rem;
         font-size: 0.7rem;
     }
-
 
     .about-heading,
     .projects-heading,
@@ -1339,8 +1363,33 @@ h2 {
         font-size: 1rem;
     }
 
+    .certifications-timeline {
+        padding: 1rem 0.6rem; /* Further optimized padding */
+    }
+
+    .certification-item {
+        padding: 0.8rem; /* Consistent padding */
+        border-left: 2px solid rgba(0, 0, 0, 0.47); /* Consistent border */
+    }
+
+    .dark-mode .certification-item {
+        border-left: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .certification-item h3 {
+        font-size: 1.1rem; /* Slightly smaller but readable */
+        margin-bottom: 0.5rem;
+    }
+
+    .certification-item p {
+        font-size: 0.8rem; /* Balanced for readability */
+        line-height: 1.3;
+    }
+
     .certificate-img {
-        max-width: 180px;
+        max-width: 120px; /* Further reduced for very small screens */
+        width: 100%;
+        margin: 0.5rem auto;
     }
 
     .chat-bubble {
@@ -1383,111 +1432,15 @@ h2 {
 
     .chat-input input {
         width: 100%;
-
     }
 
     .chat-input button {
         font-size: 0.8rem;
         padding: 0.6rem 1rem;
         border: none;
-
         border-radius: 0.5rem;
         background-color: #212121;
         color: white;
         white-space: nowrap;
-
     }
-    
-
-
-
-}
-
-
-
-/* ------------------ Resume Modal ------------------ */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 1rem;
-    width: 100%;
-    max-width: 700px;
-    height:70vh;
-    border-radius: 12px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.modal-content iframe {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: #333;
-}
-
-/* Optional fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-.skill-item {
-    background: #f5f3ef;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.progress-bar {
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.progress-bar::after {
-    content: '';
-    display: block;
-    width: var(--progress);
-    height: 100%;
-    background: #9f2531;
-    transition: width 1s ease-in-out;
-}
-.dark-mode .skill-item {
-    background: #2d3748;
 }
