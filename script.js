@@ -1,4 +1,6 @@
-
+if (typeof AOS !== 'undefined') {
+    AOS.init();
+}
 // Theme Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 themeToggle.addEventListener('click', () => {
